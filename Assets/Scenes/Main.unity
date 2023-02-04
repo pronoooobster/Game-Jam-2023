@@ -154,6 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefab: {fileID: 1276650749}
   offsetY: -1.17
+  lowestChunkY: 0
+  initialChungSize: 10
+  currentDepth: 0
 --- !u!4 &266896981
 Transform:
   m_ObjectHideFlags: 0
@@ -337,7 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sensitivity: 1
-  maxY: 0
+  maxY: 3.4
+  minY: 0
 --- !u!1 &1276650749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7125386312680884198, guid: 8ff31c40a5f9003b4938f206ecfc147d, type: 3}
@@ -526,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5310991843727979011, guid: 165344ba5a80074ef930b975d809d312, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5310991843727979011, guid: 165344ba5a80074ef930b975d809d312, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
