@@ -13,7 +13,7 @@ public class ChunkGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lowestChunkY = GenerateChunk(transform.position, 10);
+        lowestChunkY = GenerateChunk(transform.position, initialChungSize);
     }
 
     public void GenerateLayer(Vector2 positionInitial)
@@ -26,7 +26,7 @@ public class ChunkGenerator : MonoBehaviour
         GameObject layer = Instantiate(chunkPrefab, position, Quaternion.identity);
         // set the parent of the layer to the ChunkGenerator
         layer.transform.parent = transform;
-        
+
         ++currentDepth;
     }
 

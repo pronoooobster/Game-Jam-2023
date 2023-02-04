@@ -8,13 +8,10 @@ public class CloudManagerScript : MonoBehaviour
     public GameObject cloudPrefab;
  
     //Set this variable to how often you want the Cloud Manager to make clouds in seconds.
-    //For Example, I have this set to 2
     public float delay = 2;
  
-    //If you ever need the clouds to stop spawning, set this variable to false, by doing: CloudManagerScript.spawnClouds = false;
     public static bool spawnClouds = true;
  
-    // Use this for initialization
     void Start () {
         //Begin SpawnClouds Coroutine
         StartCoroutine(SpawnClouds());

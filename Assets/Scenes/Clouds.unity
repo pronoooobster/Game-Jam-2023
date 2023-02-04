@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudPrefab: {fileID: 4839646491106242924, guid: 794a3f700950cbe999e12f485053eb60, type: 3}
-  delay: 2
+  delay: 3
 --- !u!4 &1337935309
 Transform:
   m_ObjectHideFlags: 0
