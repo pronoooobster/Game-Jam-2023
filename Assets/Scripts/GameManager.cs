@@ -35,18 +35,20 @@ public class GameManager : SingletonPersistent<GameManager>
         hydration -= hydrationDelta;
         nutrition -= nutritionDelta;
 
-        // update bars
-        hydrationBar.fillAmount = hydration / 100;
-        nutritionBar.fillAmount = nutrition / 100;
-
         // update elements
         if (elements.Count > 0)
         {
             // check elements that expire this step
-            while(elements.Peek().endStep >= step) {
+            while(elements.Peek().endStep <= step) {
+                ElementScript element = elements.Peek();
                 elements.Dequeue();
+
                 //! uncomment this line to destroy the element after it reaches the end
-                // Destroy(element.gameObject);
+                Destroy(element.gameObject);
+
+                if(elements.Count <= 0) {
+                    break;
+                }
             }
         }
 
@@ -61,16 +63,20 @@ public class GameManager : SingletonPersistent<GameManager>
             switch (element.type)
             {
                 case 0:
-                    setHydration(hydration + 10);
+                    setHydration(hydration + 20);
                     break;
                 case 2:
-                    setHydration(hydration + 10);
+                    setNutrition(nutrition + 20);
                     break;
                 case 3:
-                    setNutrition(nutrition + 20);
+                    setNutrition(nutrition + 30);
                     break;
             }
         }
+
+        // update bars
+        hydrationBar.fillAmount = hydration / 100;
+        nutritionBar.fillAmount = nutrition / 100;
 
         step++;
     }

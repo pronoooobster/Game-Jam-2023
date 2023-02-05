@@ -10,6 +10,10 @@ public class Root : MonoBehaviour
     public GameObject rootPrefab;
     public Transform endNode;
 
+    // variables for images of selected and unselected root
+    public Sprite selectedSprite;
+    public Sprite unselectedSprite;
+
     [SerializeField]
     private List<Root> nextRoots;
     
@@ -46,6 +50,9 @@ public class Root : MonoBehaviour
         Color tmp = spriteRenderer.color;
         tmp.a = 1f;
 
+        // Change the sprite
+        spriteRenderer.sprite = selectedSprite;
+
         spriteRenderer.color = tmp;
 
         ShowTempRoots();
@@ -55,7 +62,10 @@ public class Root : MonoBehaviour
     {
         // Change the alpha channel of the sprite
         Color tmp = spriteRenderer.color;
-        tmp.a = 0.8f;
+        tmp.a = 1f;
+
+        // Change the sprite
+        spriteRenderer.sprite = unselectedSprite;
 
         spriteRenderer.color = tmp;
 
@@ -118,12 +128,15 @@ public class Root : MonoBehaviour
 
     // on collision with another object
     private void OnTriggerEnter2D(Collider2D other) {
+        // debvuug
+        Debug.Log("Collision with " + other.gameObject.name);
         // check if the object is an element
         if(other.gameObject.tag == "Element") {
             // if the element is a rock
             if(other.gameObject.GetComponent<ElementScript>().type == 1) {
                 
-                // TODO: add screen shake
+                StartCoroutine(FindObjectOfType<CameraShake>().Shake(.3f,.3f));
+
                 // step the game forward in game manager
                 GameManager.Instance.stepForward();
 
