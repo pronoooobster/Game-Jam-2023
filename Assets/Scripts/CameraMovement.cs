@@ -8,11 +8,12 @@ public class CameraMovement : MonoBehaviour
     public float sensitivity = 2.0f;
     public float maxY = 20.0f;
     public float minY = 0.0f;
-    private float y = 0.0f;
+    private float y = 3.4f;
     private float camSafeZone = 0.0f;
     
     void Start()
     {
+        y = transform.position.y;
         Camera camera = GetComponent<Camera>();
     }
 

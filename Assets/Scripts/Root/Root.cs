@@ -7,7 +7,6 @@ public class Root : MonoBehaviour
     private static readonly int maxNextRoots = 2;
 
     [Header("Settings")]
-    public GameObject tempRootPrefab;
     public GameObject rootPrefab;
     public Transform endNode;
 
@@ -29,6 +28,12 @@ public class Root : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         UnselectRoot();
+
+        //updating the deepest point
+        if (endNode.position.y < RootManager.Instance.DeepestPoint)
+        {
+            RootManager.Instance.DeepestPoint = transform.position.y;
+        }
     }
     public bool CanSelect()
     {
@@ -50,7 +55,7 @@ public class Root : MonoBehaviour
     {
         // Change the alpha channel of the sprite
         Color tmp = spriteRenderer.color;
-        tmp.a = 0.5f;
+        tmp.a = 0.8f;
 
         spriteRenderer.color = tmp;
 
@@ -95,6 +100,9 @@ public class Root : MonoBehaviour
         //int index = tempRoots.IndexOf(newRootTransform.gameObject);
         //tempRoots[index].GetComponent<TempRoot>().SetIsPossible(false);
 
+        // step the game forward in game manager
+        GameManager.Instance.stepForward();
+
         return newRoot;
     }
 
@@ -105,6 +113,26 @@ public class Root : MonoBehaviour
             Transform tempRoot = tempRoots.ElementAt(i).transform;
 
             tempRoot.transform.rotation = Quaternion.Euler(0f, 0f, (i * 30) -60f);
+        }
+    }
+
+    // on collision with another object
+    private void OnTriggerEnter2D(Collider2D other) {
+        // check if the object is an element
+        if(other.gameObject.tag == "Element") {
+            // if the element is a rock
+            if(other.gameObject.GetComponent<ElementScript>().type == 1) {
+                
+                // TODO: add screen shake
+                // step the game forward in game manager
+                GameManager.Instance.stepForward();
+
+                // destroy the root
+                Destroy(gameObject);
+            } else {
+                // add the element to the queue
+                GameManager.Instance.addElement(other.gameObject.GetComponent<ElementScript>());
+            }
         }
     }
 }

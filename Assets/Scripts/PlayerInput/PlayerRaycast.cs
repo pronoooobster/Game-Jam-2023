@@ -59,6 +59,8 @@ public class PlayerRaycast : MonoBehaviour
             {
                 // Create a root in the tempRoot's position and assign it to the selectedRoot's root list
                 Transform newRootTransform = hit.collider.transform.parent; // Game Map transform
+                Debug.Log(newRootTransform.position);
+                Debug.Log(newRootTransform.localPosition);
                 Root newRoot = selectedRoot.AddRoot(newRootTransform);
                 
                 selectedRoot.UnselectRoot();
