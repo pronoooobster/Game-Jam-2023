@@ -610,6 +610,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!1 &106495432
 GameObject:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -646,6 +647,7 @@ RectTransform:
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &150822637
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -745,6 +747,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 162345591}
   - component: {fileID: 162345593}
   - component: {fileID: 162345592}
@@ -779,6 +782,20 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &162345592
 MonoBehaviour:
+
+  - component: {fileID: 1694461084}
+  - component: {fileID: 1694461083}
+  - component: {fileID: 1694461082}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1694461082
+AudioListener:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -835,10 +852,17 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &163958057
 RectTransform:
+
+  m_GameObject: {fileID: 1694461081}
+  m_Enabled: 1
+--- !u!20 &1694461083
+Camera:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 163958056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
