@@ -269,12 +269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.62
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 522987011}
   - component: {fileID: 522987010}
   - component: {fileID: 522987013}
-  - component: {fileID: 522987014}
+  - component: {fileID: 522987015}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -548,7 +548,7 @@ MonoBehaviour:
   sensitivity: 1
   maxY: 3.4
   minY: -3
---- !u!114 &522987014
+--- !u!114 &522987015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,17 +557,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 522987009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea000f0c8905a483bbb5cbdf9a4190f, type: 3}
+  m_Script: {fileID: 11500000, guid: 539cfe20fbd082bb3bd024cd512f7e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hydration: 100
-  nutrition: 100
-  hydrationDelta: 10
-  nutritionDelta: 10
-  hydrationBar: {fileID: 1403441155}
-  nutritionBar: {fileID: 528516281}
-  step: 0
-  stepLength: 3
 --- !u!1 &528516279
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +785,58 @@ Transform:
   - {fileID: 1666807434}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &976299001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976299003}
+  - component: {fileID: 976299002}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &976299002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976299001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea000f0c8905a483bbb5cbdf9a4190f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hydration: 100
+  nutrition: 100
+  hydrationDelta: 10
+  nutritionDelta: 10
+  hydrationBar: {fileID: 1403441155}
+  nutritionBar: {fileID: 528516281}
+  step: 0
+  stepLength: 3
+--- !u!4 &976299003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976299001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.13388062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027996378
 GameObject:
@@ -1129,7 +1173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5, y: 319.6867}
+  m_AnchoredPosition: {x: 6.87, y: 322.88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915222406
