@@ -36,7 +36,7 @@ public class ChunkGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lowestChunkY = GenerateChunk(transform.position, 10);
+        lowestChunkY = GenerateChunk(transform.position, initialChungSize);
     }
 
     public void GenerateLayer(Vector2 positionInitial)
@@ -107,7 +107,7 @@ public class ChunkGenerator : MonoBehaviour
             // set the parent of the crystal element to the dirt layer
             crystal.transform.parent = layer.transform;
         }
-
+        
         ++currentDepth;
     }
 
