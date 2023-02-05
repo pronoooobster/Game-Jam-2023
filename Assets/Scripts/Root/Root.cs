@@ -30,6 +30,10 @@ public class Root : MonoBehaviour
 
         UnselectRoot();
     }
+    public bool CanSelect()
+    {
+        return nextRoots.Count < 2;
+    }
 
     public void SelectRoot()
     {
@@ -57,6 +61,7 @@ public class Root : MonoBehaviour
     {
         foreach (GameObject root in tempRoots)
         {
+            //if(root.GetComponent<TempRoot>().GetIsPossible())
             root.SetActive(true);
         }
     }
@@ -83,11 +88,12 @@ public class Root : MonoBehaviour
 
         newRoot.transform.parent.parent = transform.parent.parent;
 
-        //newRoot.transform.parent.SetPositionAndRotation(newRootTransform.position, newRootTransform.rotation);
-        newRoot.transform.parent.position = newRootTransform.position;
-        newRoot.transform.parent.rotation = newRootTransform.rotation;
+        newRoot.transform.parent.SetPositionAndRotation(newRootTransform.position, newRootTransform.rotation);
 
         newRoot.UpdateTempRootsAngles(newRootTransform.eulerAngles.z);
+
+        //int index = tempRoots.IndexOf(newRootTransform.gameObject);
+        //tempRoots[index].GetComponent<TempRoot>().SetIsPossible(false);
 
         return newRoot;
     }
@@ -100,23 +106,5 @@ public class Root : MonoBehaviour
 
             tempRoot.transform.rotation = Quaternion.Euler(0f, 0f, (i * 30) -60f);
         }
-        //Debug.Log("update angles");
-        //Debug.Log("Parent angle: " + parentAngle);
-
-        //if (parentAngle >= 180 && parentAngle <= 360)
-        //{
-        //    parentAngle -= 360;
-        //}
-
-        //Debug.Log("Parent angle: " + parentAngle);
-
-        //parentAngleDebug = parentAngle;
-
-        //for (int i = 0; i < tempRoots.Count; i++)
-        //{
-        //    Transform tempRoot = tempRoots.ElementAt(i).transform;
-
-        //    tempRoot.transform.rotation = Quaternion.Euler(tempRoot.eulerAngles.x, tempRoot.eulerAngles.y, tempRoot.eulerAngles.z + parentAngle);
-        //}
     }
 }

@@ -44,6 +44,13 @@ public class PlayerRaycast : MonoBehaviour
                     selectedRoot.UnselectRoot();
                     selectedRoot = null;
                 }
+                Root tempRoot = hit.transform.gameObject.GetComponent<Root>();
+                
+                if (!tempRoot.CanSelect())
+                {
+                    Debug.Log("No more branches");
+                    return;
+                }
 
                 selectedRoot = hit.transform.gameObject.GetComponent<Root>();
                 selectedRoot.SelectRoot();
