@@ -16,4 +16,6 @@ public class SingletonPersistent<T> : MonoBehaviour where T : Component
             Destroy(gameObject);
         }
     }
+
 }
+
