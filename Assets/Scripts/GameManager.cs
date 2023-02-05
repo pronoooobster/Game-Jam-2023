@@ -26,6 +26,8 @@ public class GameManager : SingletonPersistent<GameManager>
         if (hydration <= 0 || nutrition <= 0)
         {
             // end the game
+            // switch scene to game over
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
 
