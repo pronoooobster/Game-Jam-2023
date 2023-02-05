@@ -33,29 +33,6 @@ public class ChunkGenerator : MonoBehaviour
     // array of crystal element options
     public GameObject[] crystalElements;
 
-    // coal spawn chance
-    public float coalChance = 0.3f;
-    // rock spawn chance
-    public float rockChance = 0.3f;
-    // gem spawn chance
-    public float gemChance = 0.15f;
-    // crystal spawn chance
-    public float crystalChance = 0.1f;
-
-    // spawn horizontal range
-    public float spawnRangeX = 0.5f;
-    // spawn vertical range
-    public float spawnRangeY = 0.5f;
-
-    // array of coal element options
-    public GameObject[] coalElements;
-    // array of rock element options
-    public GameObject[] rockElements;
-    // array of gem element options
-    public GameObject[] gemElements;
-    // array of crystal element options
-    public GameObject[] crystalElements;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +41,6 @@ public class ChunkGenerator : MonoBehaviour
 
     public void GenerateLayer(Vector2 positionInitial)
     {
-                            //! generating dirt
                             //! generating dirt
         // offset the y position by the offsetY
         positionInitial.y += offsetY;

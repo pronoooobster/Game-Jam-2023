@@ -157,7 +157,11 @@ MonoBehaviour:
   lowestChunkY: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   initialChungSize: 10
+=======
+  initialChungSize: 3
+>>>>>>> Stashed changes
 =======
   initialChungSize: 3
 >>>>>>> Stashed changes
