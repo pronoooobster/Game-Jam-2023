@@ -13,31 +13,34 @@ public class GameManager : SingletonPersistent<GameManager>
     public bool IsGameOver { get; private set; }
 
     #region Load Scenes
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        GamePaused = false;
-        IsGameOver = false;
-        LevelCompleted = false;
+    // private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // {
+    //     GamePaused = false;
+    //     IsGameOver = false;
+    //     LevelCompleted = false;
 
-        //switch (scene.name)
-        //{
-        //    case "Menu":
-        //        // If it's the main menu
-        //        // Do some stuff
+    //     switch (scene.name)
+    //     {
+    //        case "Menu":
+    //             Debug.Log("Menu Loaded");
 
-        //        break;
-        //    case "Main":
-        //        // If it's the main scene
-        //        // Do other stuff here
-        //        // Initialize all the stuff that we need like sounds and shit
+    //            // If it's the main menu
+    //            // Do some stuff
 
-        //        break;
-        //    default:
-        //        // If it's neither of those, do something else who knows
+    //            break;
+    //        case "Main":
+    //             Debug.Log("Main Scene Loaded");
+    //            // If it's the main scene
+    //            // Do other stuff here
+    //            // Initialize all the stuff that we need like sounds and shit
 
-        //        break;
-        //}
-    }
+    //            break;
+    //        default:
+    //            // If it's neither of those, do something else who knows
+
+    //            break;
+    //     }
+    // }
 
     public void LoadLevel(int levelIndex)
     {

@@ -9,7 +9,9 @@ public class UIManager : SingletonPersistent<UIManager>
      * Game Panels Indexes:
      *       0. Main Menu
      *       1. How To Play
-     *       2. Game Over
+     *       2. Sounds Effects
+     *       3. Game Over
+     *     4. Gameplay  Completed
      */
 
     [Header("UI Panels References")]
@@ -59,7 +61,11 @@ public class UIManager : SingletonPersistent<UIManager>
     {
         yield return new WaitForSecondsRealtime(0.5f);
 
-        ShowUpPanel(2);
+        ShowUpPanel(3);
+    }
+    public void ShowGameplayPanel()
+    {
+        ShowUpPanel(4);
     }
 
     public void TogglePausePanel()
