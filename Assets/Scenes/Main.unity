@@ -155,19 +155,7 @@ MonoBehaviour:
   chunkPrefab: {fileID: 1276650749}
   offsetY: -1.75
   lowestChunkY: 0
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  initialChungSize: 10
-=======
   initialChungSize: 3
->>>>>>> Stashed changes
-=======
-  initialChungSize: 3
->>>>>>> Stashed changes
-=======
-  initialChungSize: 3
->>>>>>> Stashed changes
   currentDepth: 0
   coalChance: 0.5
   rockChance: 0.5
